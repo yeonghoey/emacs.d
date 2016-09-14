@@ -24,4 +24,5 @@
 (evil-mode 1)
 (projectile-global-mode)
 
+(setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook 'jedi:setup)
