@@ -8,12 +8,9 @@
 
 
 ;; package init
-(defun require-package (&rest packages)
-  (mapcar
-    (lambda (package)
-      (when (not (package-installed-p package))
-        (package-install package)))
-   packages))
+(defun require-package (package)
+  (when (not (package-installed-p package))
+    (package-install package)))
 
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
@@ -21,6 +18,5 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(ensure-package-installed
-    'projectile
-	)
+(require-package 'projectile)
+(projectile-global-mode)
