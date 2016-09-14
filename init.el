@@ -16,7 +16,12 @@
 
 (require-package 'evil)
 (require-package 'projectile)
+(require-package 'auto-complete)
+(require-package 'epc)
+(require-package 'jedi)
 
 (require 'evil)
 (evil-mode 1)
 (projectile-global-mode)
+
+(add-hook 'python-mode-hook 'jedi:setup)
