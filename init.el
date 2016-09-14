@@ -14,6 +14,9 @@
 (when (not (file-exists-p package-user-dir))
   (package-refresh-contents))
 
+(require-package 'evil)
 (require-package 'projectile)
 
+(require 'evil)
+(evil-mode 1)
 (projectile-global-mode)
