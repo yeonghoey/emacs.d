@@ -8,6 +8,7 @@
   (when (not (package-installed-p package))
     (package-install package)))
 
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 (when (not (file-exists-p package-user-dir))
