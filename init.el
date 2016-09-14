@@ -11,7 +11,7 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(when (not (file-exists-p package-user-dir))
+(when (not package-archive-contents)
   (package-refresh-contents))
 
 (require-package 'evil)
